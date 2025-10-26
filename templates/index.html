@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Album Search</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
+      font-family: Arial, sans-serif;
+      color: #f1f1f1;
+    }
+
+    .form-container {
+      background: #1c1c1c;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px #0d0d0d, -5px -5px 15px #2e2e2e;
+      text-align: center;
+      width: 320px;
+    }
+
+    .form-container h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #e5e5e5;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 8px;
+      text-align: left;
+      font-size: 0.9rem;
+      color: #bbbbbb;
+    }
+
+    .form-container input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: none;
+      background: #2a2a2a;
+      color: #f1f1f1;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      box-shadow: inset 2px 2px 6px #0d0d0d, inset -2px -2px 6px #3a3a3a;
+    }
+
+    .form-container input[type="text"]::placeholder {
+      color: #888888;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(145deg, #333333, #1a1a1a);
+      color: #f1f1f1;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 4px 4px 10px #0d0d0d, -4px -4px 10px #2e2e2e;
+      transition: transform 0.15s ease;
+    }
+
+    .form-container button:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(145deg, #444444, #1f1f1f);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Find an Album</h1>
+    <form method="POST">
+      <label for="album">Album Name</label>
+      <input type="text" id="album" name="album" placeholder="Enter album name" required />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  {{ if .URL }}
+  <div class="cover">
+      <img src="{{ .URL }}" alt="albumCover">
+  </div>
+  {{ end }}
+
+</body>
+</html>
+
