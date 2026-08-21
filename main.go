@@ -108,7 +108,6 @@ func getAlbumID(albumName, token string) string {
 
 	return result.Albums.Items[0].ID
 }
-
 func getAlbumCover(albumID, token string) []Image {
 	var album Album
 
