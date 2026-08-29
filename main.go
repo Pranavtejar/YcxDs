@@ -145,8 +145,8 @@ func home(c echo.Context) error {
 		return c.Render(http.StatusOK, "index.html", nil)
 	}
 
-	clientID := "07293adb0e9c4eca8b689ef35514d405"
-	clientSecret := "572889348e754625b7c76cfe36e48315"
+	clientID := os.Getenv("SPOTIFY_CLIENT_ID")
+	clientSecret := os.Getenv("SPOTIFY_CLIENT_SECRET")
 
 	token := getSpotifyToken(clientID, clientSecret)
 	albumID := getAlbumID(albName, token)
