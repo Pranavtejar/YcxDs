@@ -1,4 +1,4 @@
-
+//everything in main.go
 package main
 
 import (
